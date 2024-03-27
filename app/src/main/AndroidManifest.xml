@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/icon_paja"
         android:label="@string/app_name"
-
         android:supportsRtl="true"
         android:theme="@style/Theme.PAJAAppFinal"
         tools:targetApi="31">
+
         <activity
-            android:name=".SongSearchActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".RecipeHomeActivity"
@@ -25,7 +25,7 @@
             android:name=".SunriseSunsetActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SongSearchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

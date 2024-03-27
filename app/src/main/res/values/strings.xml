@@ -4,4 +4,8 @@
     <string name="open_recipe">Open Recipe</string>
     <string name="open_dictionary">Open Dictionary</string>
     <string name="open_sunseeker">Open SunSeeker</string>
+    <string name="title">Welcome to Song Search</string>
+    <string name="search_text">Search</string>
+    <string name="search_hint_text">Search here for the artist</string>
+    <string name="results">Results</string>
 </resources>
