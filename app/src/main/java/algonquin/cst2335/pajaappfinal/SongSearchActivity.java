@@ -65,6 +65,7 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
 
     private void fetchArtist() {
         String url = "https://api.deezer.com/search/artist/?q=" + artistName;
+
         JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
