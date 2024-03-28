@@ -76,7 +76,7 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
                     for (int i = 0; i < items.length(); i++) {
                         JSONObject jsonObject = items.getJSONObject(i);
                         String name = jsonObject.getString("name");
-                        String picture = jsonObject.getString("picture");
+                        String picture = jsonObject.getString("picture_medium");
                         String tracklist = jsonObject.getString("tracklist");
                         Artist artist = new Artist(name, picture, tracklist);
                         artistList.add(artist);

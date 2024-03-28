@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 
-public class Album {
+public class Album   {
 
     private String name, artist_name, cover;
     private ArrayList<Song> songList;
@@ -15,6 +15,9 @@ public class Album {
 
     public void setCover(String cover) {
         this.cover = cover;
+    }
+    public Album (String name){
+        this.name = name;
     }
 
     public Album(String name, String artist_name, ArrayList<Song> songList, String cover) {

@@ -1,5 +1,5 @@
 package algonquin.cst2335.pajaappfinal;
-public class Artist {
+public class Artist  {
 
     private String name, poster, tracklist;
     public Artist(String name, String poster, String tracklist){
@@ -32,4 +32,5 @@ public class Artist {
     public void setPoster(String poster) {
         this.poster = poster;
     }
+
 }
