@@ -1,3 +1,4 @@
+
 package algonquin.cst2335.pajaappfinal;
 
 import android.content.Context;
@@ -14,6 +15,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import algonquin.cst2335.pajaappfinal.Artist;
+import algonquin.cst2335.pajaappfinal.IRecyclerView;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ArtistHolder> {
     private Context context;

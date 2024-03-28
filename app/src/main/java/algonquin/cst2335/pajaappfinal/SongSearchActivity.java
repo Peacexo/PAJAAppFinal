@@ -24,7 +24,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SongSearchActivity extends AppCompatActivity implements IRecyclerView {
 
     private RecyclerView favoriteList;
@@ -34,6 +33,7 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
     private String artistName;
     private List<Artist> artistList;
     TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,29 +49,18 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
 
         requestQueue = VolleySingleton.getInstance(this).getRequestQueue();
 
-
-
-        searchButton.setOnClickListener(click-> {
-
+        searchButton.setOnClickListener(click -> {
             artistName = search.getText().toString().trim();
             textView.setText("");
-            if (artistName.isBlank()) {
+            if (artistName.isBlank() || artistName.isEmpty()) {
                 Toast.makeText(SongSearchActivity.this, "Insert an artist to search!", Toast.LENGTH_SHORT)
                         .show();
-                //Reset RecycleView
-            } else if (artistName.isEmpty()) {
-                Toast.makeText(SongSearchActivity.this, "Insert an artist to search!", Toast.LENGTH_SHORT)
-                        .show();
-                //Reset RecycleView
             } else {
                 artistList = new ArrayList<>();
                 fetchArtist();
                 textView.setText("RESULTS"); // Change NO HARD CODE!!!
             }
-
         });
-
-
     }
 
     private void fetchArtist() {
@@ -82,8 +71,8 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
                 try {
                     // Clear the artistList before adding new items
                     artistList.clear();
-                    for (int i = 0; i < response.length(); i++) {
-                        JSONArray items = response.getJSONArray("data");
+                    JSONArray items = response.getJSONArray("data");
+                    for (int i = 0; i < items.length(); i++) {
                         JSONObject jsonObject = items.getJSONObject(i);
                         String name = jsonObject.getString("name");
                         String picture = jsonObject.getString("picture");
@@ -104,7 +93,6 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(SongSearchActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -113,8 +101,7 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(SongSearchActivity.this, SongSearchResults.class);
-
+        Intent intent = new Intent(SongSearchActivity.this, SongSearchResultsAlbums.class);
         intent.putExtra("artistName", artistList.get(position).getName());
         intent.putExtra("artistPoster", artistList.get(position).getPoster());
         intent.putExtra("artistTracklist", artistList.get(position).getTracklist());
