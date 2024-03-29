@@ -36,8 +36,8 @@
 
     <FrameLayout
         android:id="@+id/frameLayout2"
-        android:layout_width="420dp"
-        android:layout_height="177dp"
+        android:layout_width="1024dp"
+        android:layout_height="110dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,8 +113,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginBottom="63dp"
-        android:hint="by lat and lon"
+        android:text="by lat and lon"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="380dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
