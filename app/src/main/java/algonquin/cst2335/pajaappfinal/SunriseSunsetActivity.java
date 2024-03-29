@@ -1,17 +1,14 @@
 package algonquin.cst2335.pajaappfinal;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
+import android.widget.Switch;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
+import android.view.View;
+
+import android.os.Bundle;
 
 public class SunriseSunsetActivity extends AppCompatActivity {
-
-    RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
     private Switch inputSwitch;
     private EditText locationInput;
@@ -22,10 +19,10 @@ public class SunriseSunsetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sunrise_sunset);
 
-        Switch inputSwitch = findViewById(R.id.inputSwitch);
-        EditText locationInput = findViewById(R.id.locationInput);
-        EditText latInput = findViewById(R.id.latInput);
-        EditText lonInput = findViewById(R.id.lonInput);
+        inputSwitch = findViewById(R.id.inputSwitch);
+        locationInput = findViewById(R.id.locationInput);
+        latInput = findViewById(R.id.latInput);
+        lonInput = findViewById(R.id.lonInput);
 
         inputSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -43,7 +40,5 @@ public class SunriseSunsetActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
 }
