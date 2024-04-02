@@ -15,14 +15,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import algonquin.cst2335.pajaappfinal.Artist;
-import algonquin.cst2335.pajaappfinal.IRecyclerView;
-
-public class Adapter extends RecyclerView.Adapter<Adapter.ArtistHolder> {
+public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistHolder> {
     private Context context;
     private List<Artist> artistList;
     private final IRecyclerView recyclerViewinterface;
-    public Adapter(Context context, List<Artist> artistList, IRecyclerView iRecyclerView){
+    public ArtistAdapter(Context context, List<Artist> artistList, IRecyclerView iRecyclerView){
         this.context = context;
         this.artistList = artistList;
         recyclerViewinterface = iRecyclerView;

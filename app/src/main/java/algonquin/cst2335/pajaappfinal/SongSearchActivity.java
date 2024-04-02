@@ -82,8 +82,8 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
                         artistList.add(artist);
                     }
 
-                    // Move adapter creation and setting outside the loop
-                    Adapter adapter = new Adapter(SongSearchActivity.this, artistList, SongSearchActivity.this);
+
+                    ArtistAdapter adapter = new ArtistAdapter(SongSearchActivity.this, artistList, SongSearchActivity.this);
                     favoriteList.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();

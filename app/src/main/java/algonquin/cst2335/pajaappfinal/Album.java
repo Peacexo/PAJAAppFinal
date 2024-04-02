@@ -6,24 +6,29 @@ import java.util.ArrayList;
 
 public class Album   {
 
-    private String name, artist_name, cover;
-    private ArrayList<Song> songList;
+    private String name, artist_name, cover, tracklist;
+
+
+
+
+    public Album (String name, String cover){
+
+        this.name = name;
+        this.cover = cover;
+    }
+
+    public Album(String name,  String cover, String tracklist) {
+        this.name = name;
+        this.tracklist = tracklist;
+        this.cover = cover;
+    }
+
 
     public String getCover() {
         return cover;
     }
 
     public void setCover(String cover) {
-        this.cover = cover;
-    }
-    public Album (String name){
-        this.name = name;
-    }
-
-    public Album(String name, String artist_name, ArrayList<Song> songList, String cover) {
-        this.name = name;
-        this.artist_name = artist_name;
-        this.songList = songList;
         this.cover = cover;
     }
 
@@ -35,6 +40,14 @@ public class Album   {
         this.name = name;
     }
 
+    public String getArtistName() {
+        return artist_name;
+    }
+
+    public void setArtistName(String artist_name) {
+        this.artist_name = artist_name;
+    }
+
     public String getArtist_name() {
         return artist_name;
     }
@@ -43,11 +56,11 @@ public class Album   {
         this.artist_name = artist_name;
     }
 
-    public ArrayList<Song> getSongList() {
-        return songList;
+    public String getTracklist() {
+        return tracklist;
     }
 
-    public void setSongList(ArrayList<Song> songList) {
-        this.songList = songList;
+    public void setTracklist(String tracklist) {
+        this.tracklist = tracklist;
     }
 }
