@@ -1,39 +1,37 @@
 package algonquin.cst2335.pajaappfinal;
 
 public class Recipe {
+    private int id;
+    private String title;
+    private String imageUrl;
 
-    private int recipeId;
-    private String recipeTitle;
-    private String recipeImageUrl;
-
-    public Recipe(int recipeId, String recipeTitle, String recipeImageUrl) {
-        this.recipeId = recipeId;
-        this.recipeTitle = recipeTitle;
-        this.recipeImageUrl = recipeImageUrl;
+    public Recipe(int id, String title, String imageUrl) {
+        this.id = id;
+        this.title = title;
+        this.imageUrl = imageUrl;
     }
 
-    public int getRecipeId() {
-        return recipeId;
+    public int getId() {
+        return id;
     }
 
-    public void setRecipeId(int recipeId) {
-        this.recipeId = recipeId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getRecipeTitle() {
-        return recipeTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setRecipeTitle(String recipeTitle) {
-        this.recipeTitle = recipeTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getRecipeImageUrl() {
-        return recipeImageUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setRecipeImageUrl(String recipeImageUrl) {
-        this.recipeImageUrl = recipeImageUrl;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
-
 }

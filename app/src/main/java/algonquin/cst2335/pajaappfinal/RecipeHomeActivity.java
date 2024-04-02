@@ -1,12 +1,15 @@
 package algonquin.cst2335.pajaappfinal;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,8 +17,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.snackbar.Snackbar;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,88 +24,75 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import algonquin.cst2335.pajaappfinal.databinding.ActivityRecipeHomeBinding;
-
 public class RecipeHomeActivity extends AppCompatActivity {
+    private EditText searchText;
+    private ImageButton searchButton;
+    private RecyclerView recyclerView;
+    private RecipeAdapter adapter;
+    private List<Recipe> recipeList;
+    private RequestQueue queue;
+    private static final String API_KEY = "https://api.spoonacular.com/recipes/complexSearch?apiKey=13d3e8429e4741c1832683ffae6972ea&query=";
 
-    private final String TAG = getClass().getSimpleName();
-    private static final String API_KEY = "13d3e8429e4741c1832683ffae6972ea";
-    private static final String API_URL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + API_KEY + "&query=";
-
-    protected String query;
-
-    protected RequestQueue queue;
-    private ActivityRecipeHomeBinding binding;
-
-    RecipeAdapter recipeAdapter;
-    List<Recipe> recipesList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.recipe_home_activity);
 
-        binding = ActivityRecipeHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        searchText = findViewById(R.id.editSearchRecipe);
+        searchButton = findViewById(R.id.searchRecipeButton);
+        recyclerView = findViewById(R.id.recycler_view_recipes);
 
+        recipeList = new ArrayList<>();
+        adapter = new RecipeAdapter(recipeList, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
+        queue = Volley.newRequestQueue(this);
 
-
-        binding.searchRecipeButton.setOnClickListener(new View.OnClickListener() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                query = binding.editSearchRecipe.getText().toString().trim();
+                String query = searchText.getText().toString().trim();
                 if (!query.isEmpty()) {
-                    searchRecipes(query);
+                    fetchRecipes(query);
                 } else {
                     Toast.makeText(RecipeHomeActivity.this, "Please enter a search query", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recipeAdapter = new RecipeAdapter(recipesList,getApplicationContext());
-        binding.recyclerView.setAdapter(recipeAdapter);
     }
 
-    private void searchRecipes(String query) {
-        try {
-            if (!query.isEmpty()) {
-                String url = API_URL + query;
+    private void fetchRecipes(String query) {
+        String url = API_KEY + query;
 
-                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                        new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                try {
-                                    JSONArray resultsArray = response.getJSONArray("results");
-//                                    List<Recipe> recipesList = new ArrayList<>();
-                                    for (int i = 0; i < resultsArray.length(); i++) {
-                                        JSONObject recipeObject = resultsArray.getJSONObject(i);
-                                        int id = recipeObject.getInt("recipeId");
-                                        String title = recipeObject.getString("recipeTitle");
-                                        String imageUrl = recipeObject.getString("recipeImage");
-                                        recipesList.add(new Recipe(id, title, imageUrl));
-                                    }
-                                    recipeAdapter.notifyDataSetChanged();
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray resultsArray = response.getJSONArray("results");
+                            recipeList.clear();
+                            for (int i = 0; i < resultsArray.length(); i++) {
+                                JSONObject recipeObject = resultsArray.getJSONObject(i);
+                                int id = recipeObject.getInt("id");
+                                String title = recipeObject.getString("title");
+                                String imageUrl = recipeObject.getString("image");
+                                Recipe recipe = new Recipe(id, title, imageUrl);
+                                recipeList.add(recipe);
                             }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.e(TAG, "Error:" + error.getMessage());
-                                Snackbar.make(binding.recyclerView, "R.string.error_msg", Snackbar.LENGTH_SHORT).show();
-                            }
-                        });
+                            adapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(RecipeHomeActivity.this, "Error fetching recipes: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-                queue = Volley.newRequestQueue(this);
-                queue.add(request);
-            } else {
-                Snackbar.make(binding.recyclerView, "R.string.error_msg", Snackbar.LENGTH_SHORT).show();
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Error encoding query");
-        }
+        queue.add(request);
     }
 }
