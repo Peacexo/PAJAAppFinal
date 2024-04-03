@@ -25,6 +25,8 @@ import org.json.JSONObject;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
 
+    private final String MY_KEY = "13d3e8429e4741c1832683ffae6972ea";
+    private final String URL_REQUEST_DATA = "https://api.spoonacular.com/recipes/";
     private RequestQueue queue;
     private RecipeDAO recipeDAO;
 
@@ -70,7 +72,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
 
     private void searchRecipeDetails(Recipe recipe) {
-        String url = "https://api.spoonacular.com/recipes/" + recipe.getId() + "/information?apiKey=13d3e8429e4741c1832683ffae6972ea";
+        String url = URL_REQUEST_DATA + recipe.getId() + "/information?apiKey=" + MY_KEY;
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {

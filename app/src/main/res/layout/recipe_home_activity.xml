@@ -8,13 +8,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <!-- ImageView -->
+
         <ImageView
             android:id="@+id/RecipeHomeTopBackground"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:scaleType="fitXY"
             android:src="@drawable/recipe_home_top_background" />
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            />
 
         <!-- TextView -->
         <TextView
