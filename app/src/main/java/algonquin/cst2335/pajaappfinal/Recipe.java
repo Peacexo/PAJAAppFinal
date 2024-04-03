@@ -5,10 +5,21 @@ public class Recipe {
     private String title;
     private String imageUrl;
 
+    private String summary;
+    private String fullRecipeUrl;
+
     public Recipe(int id, String title, String imageUrl) {
         this.id = id;
         this.title = title;
         this.imageUrl = imageUrl;
+    }
+
+    public Recipe(int id, String title, String imageUrl, String summary, String fullRecipeUrl) {
+        this.id = id;
+        this.title = title;
+        this.imageUrl = imageUrl;
+        this.summary = summary;
+        this.fullRecipeUrl = fullRecipeUrl;
     }
 
     public int getId() {
@@ -33,5 +44,21 @@ public class Recipe {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getFullRecipeUrl() {
+        return fullRecipeUrl;
+    }
+
+    public void setFullRecipeUrl(String fullRecipeUrl) {
+        this.fullRecipeUrl = fullRecipeUrl;
     }
 }

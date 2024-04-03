@@ -1,6 +1,8 @@
 package algonquin.cst2335.pajaappfinal;
 
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,14 +28,30 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @NonNull
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_row, parent, false);
-        return new RecipeViewHolder(view);
+        View thisRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_row, parent, false);
+        return new RecipeViewHolder(thisRow);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipeList.get(position);
         holder.bind(recipe);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int recipeId = recipe.getId();
+                // Create intent to open RecipeDetailsActivity
+                Intent intent = new Intent(context, RecipeDetailsActivity.class);
+                // Pass recipe details as intent extras
+                intent.putExtra("recipeId", recipeId);
+                intent.putExtra("title", recipe.getTitle());
+                intent.putExtra("imageUrl", recipe.getImageUrl());
+
+                // Start RecipeDetailsActivity
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
