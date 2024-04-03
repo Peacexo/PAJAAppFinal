@@ -1,6 +1,13 @@
 package algonquin.cst2335.pajaappfinal;
 
-public class Recipe {
+
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
+@Entity(tableName = "recipes")
+public class Recipe implements Serializable {
+    @PrimaryKey
     private int id;
     private String title;
     private String imageUrl;
@@ -14,13 +21,6 @@ public class Recipe {
         this.imageUrl = imageUrl;
     }
 
-    public Recipe(int id, String title, String imageUrl, String summary, String fullRecipeUrl) {
-        this.id = id;
-        this.title = title;
-        this.imageUrl = imageUrl;
-        this.summary = summary;
-        this.fullRecipeUrl = fullRecipeUrl;
-    }
 
     public int getId() {
         return id;

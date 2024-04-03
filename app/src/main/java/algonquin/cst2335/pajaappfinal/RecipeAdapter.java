@@ -1,6 +1,7 @@
 package algonquin.cst2335.pajaappfinal;
 
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
@@ -40,13 +42,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             @Override
             public void onClick(View v) {
 
-                int recipeId = recipe.getId();
                 // Create intent to open RecipeDetailsActivity
                 Intent intent = new Intent(context, RecipeDetailsActivity.class);
-                // Pass recipe details as intent extras
-                intent.putExtra("recipeId", recipeId);
-                intent.putExtra("title", recipe.getTitle());
-                intent.putExtra("imageUrl", recipe.getImageUrl());
+                // Pass recipe object as intent extras. Reference: [1]
+                intent.putExtra("recipe", recipe);
+                context.startActivity(intent);
 
                 // Start RecipeDetailsActivity
                 context.startActivity(intent);

@@ -1,7 +1,9 @@
 package algonquin.cst2335.pajaappfinal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -29,15 +31,14 @@ import java.util.List;
 
 public class RecipeHomeActivity extends AppCompatActivity {
     private EditText searchText;
-    private ImageButton searchButton;
+    private Button searchButton;
     private RecyclerView recyclerView;
+    private Button favoriteRecipes;
 
     private RecipeAdapter adapter;
     private List<Recipe> recipeList;
     private RequestQueue queue;
-
-    private final String MY_KEY = "13d3e8429e4741c1832683ffae6972ea";
-    private final String URL_REQUEST_DATA = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + MY_KEY + "&query=";
+    private static final String URL_API_KEY = "https://api.spoonacular.com/recipes/complexSearch?apiKey=13d3e8429e4741c1832683ffae6972ea&query=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class RecipeHomeActivity extends AppCompatActivity {
         searchText = findViewById(R.id.editSearchRecipe);
         searchButton = findViewById(R.id.searchRecipeButton);
         recyclerView = findViewById(R.id.recycler_view_recipes);
+        favoriteRecipes = findViewById(R.id.buttonFavorites);
 
         recipeList = new ArrayList<>();
         adapter = new RecipeAdapter(recipeList, this);
@@ -65,14 +67,24 @@ public class RecipeHomeActivity extends AppCompatActivity {
                 if (!query.isEmpty()) {
                     searchRecipes(query);
                 } else {
-                    Toast.makeText(RecipeHomeActivity.this, "Please enter a word to search", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RecipeHomeActivity.this, "Please enter a search query", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+
+        favoriteRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the activity to display the favorite list of recipes
+                Intent intent = new Intent(RecipeHomeActivity.this, FavoriteRecipesActivity.class);
+                startActivity(intent);
             }
         });
     }
 
     private void searchRecipes(String query) {
-        String url = URL_REQUEST_DATA + query;
+        String url = URL_API_KEY + query;
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
