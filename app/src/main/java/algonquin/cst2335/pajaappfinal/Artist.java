@@ -1,12 +1,35 @@
 package algonquin.cst2335.pajaappfinal;
-public class Artist  {
 
-    private String name, poster, tracklist;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import java.math.BigInteger;
+
+@Entity
+public class Artist  {
+    @PrimaryKey
+    @ColumnInfo(name="id")
+    private int id;
+    @ColumnInfo(name="name")
+    private String name;
+    @ColumnInfo(name="poster")
+    private String poster;
+
+    private String tracklist;
     public Artist(String name, String poster, String tracklist){
         this.name = name;
         this.poster = poster;
         this.tracklist = tracklist;
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

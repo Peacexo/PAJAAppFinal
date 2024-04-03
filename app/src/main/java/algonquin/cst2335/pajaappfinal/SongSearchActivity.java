@@ -1,11 +1,15 @@
 package algonquin.cst2335.pajaappfinal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,7 +30,7 @@ import java.util.List;
 
 public class SongSearchActivity extends AppCompatActivity implements IRecyclerView {
 
-    private RecyclerView favoriteList;
+    private RecyclerView resultList;
     private RequestQueue requestQueue;
     private EditText search;
     private Button searchButton;
@@ -34,14 +38,36 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
     private List<Artist> artistList;
     TextView textView;
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.song_search_toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()== R.id.item1){
+            Intent favorite = new Intent(SongSearchActivity.this, SongSearchFavorites.class);
+            startActivity(favorite);
+        }
+//
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song_search);
 
-        favoriteList = findViewById(R.id.favorite_list);
-        favoriteList.setHasFixedSize(true);
-        favoriteList.setLayoutManager(new LinearLayoutManager(this));
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Song Search");
+        setSupportActionBar(toolbar);
+
+
+        resultList = findViewById(R.id.artist_result_list);
+        resultList.setHasFixedSize(true);
+        resultList.setLayoutManager(new LinearLayoutManager(this));
         search = findViewById(R.id.search_editText);
         searchButton = findViewById(R.id.search_button);
         textView = findViewById(R.id.results);
@@ -62,6 +88,8 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
             }
         });
     }
+
+
 
     private void fetchArtist() {
         String url = "https://api.deezer.com/search/artist/?q=" + artistName;
@@ -84,7 +112,7 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
 
 
                     ArtistAdapter adapter = new ArtistAdapter(SongSearchActivity.this, artistList, SongSearchActivity.this);
-                    favoriteList.setAdapter(adapter);
+                    resultList.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(SongSearchActivity.this, "Error parsing JSON", Toast.LENGTH_SHORT).show();

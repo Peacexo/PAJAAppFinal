@@ -1,16 +1,27 @@
 package algonquin.cst2335.pajaappfinal;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 
-
+@Entity
 public class Album   {
-
-    private String name, artist_name, cover, tracklist;
-
-
-
-
+    @PrimaryKey
+    @ColumnInfo(name="albumID")
+    private int id;
+    @ColumnInfo(name="title")
+    private String name;
+    @ColumnInfo(name="artist_name")
+    private String  artist_name;
+    @ColumnInfo(name="album_cover")
+    private String cover;
+    private String tracklist;
+    @Ignore
     public Album (String name, String cover){
 
         this.name = name;
@@ -23,6 +34,13 @@ public class Album   {
         this.cover = cover;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCover() {
         return cover;

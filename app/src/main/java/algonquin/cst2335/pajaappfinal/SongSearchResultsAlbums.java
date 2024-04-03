@@ -96,9 +96,9 @@ public class SongSearchResultsAlbums extends AppCompatActivity implements IRecyc
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(SongSearchResultsAlbums.this, SongSearchAlbumFocus.class);
-        intent.putExtra("artistName", albumList.get(position).getName());
-        intent.putExtra("artistPoster", albumList.get(position).getCover());
-        intent.putExtra("artistTracklist", albumList.get(position).getTracklist());
+        intent.putExtra("albumName", albumList.get(position).getName());
+        intent.putExtra("albumCover", albumList.get(position).getCover());
+        intent.putExtra("albumTracklist", albumList.get(position).getTracklist());
         startActivity(intent);
     }
 }

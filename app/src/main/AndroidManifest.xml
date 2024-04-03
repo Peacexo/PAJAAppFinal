@@ -14,13 +14,16 @@
         android:theme="@style/Theme.PAJAAppFinal"
         tools:targetApi="31">
         <activity
+            android:name=".SongSearchFavorites"
+            android:exported="false" />
+        <activity
             android:name=".SongSearchAlbumFocus"
             android:exported="false" />
         <activity
             android:name=".SongSearchResultsAlbums"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SongSearchActivity"
             android:exported="false" />
         <activity
             android:name=".RecipeHomeActivity"
@@ -32,7 +35,7 @@
             android:name=".SunriseSunsetActivity"
             android:exported="false" />
         <activity
-            android:name=".SongSearchActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
