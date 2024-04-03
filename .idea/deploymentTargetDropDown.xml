@@ -3,6 +3,22 @@
   <component name="deploymentTargetDropDown">
     <value>
       <entry key="MainActivity">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\aless\.android\avd\Pixel_2_API_27.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-03-30T02:32:32.972292300Z" />
+        </State>
+      </entry>
+      <entry key="RecipeHomeActivity">
         <State />
       </entry>
       <entry key="app">
@@ -13,12 +29,12 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\morio\.android\avd\Pixel_2_API_27.avd" />
+                  <value value="C:\Users\aless\.android\avd\Pixel_3a_API_34.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-27T00:41:53.607182200Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-04-03T02:42:48.932703900Z" />
         </State>
       </entry>
     </value>
