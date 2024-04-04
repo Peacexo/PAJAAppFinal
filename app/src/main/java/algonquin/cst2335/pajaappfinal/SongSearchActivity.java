@@ -61,13 +61,14 @@ public class SongSearchActivity extends AppCompatActivity implements IRecyclerVi
         setContentView(R.layout.activity_song_search);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Song Search");
+        toolbar.setTitle(" Welcome Song Search");
         setSupportActionBar(toolbar);
 
 
         resultList = findViewById(R.id.artist_result_list);
         resultList.setHasFixedSize(true);
         resultList.setLayoutManager(new LinearLayoutManager(this));
+
         search = findViewById(R.id.search_editText);
         searchButton = findViewById(R.id.search_button);
         textView = findViewById(R.id.results);
