@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <!-- ALESSANDRA ADDED: -->
     <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -21,6 +22,13 @@
             android:exported="false" />
         <activity
             android:name=".SongSearchResultsAlbums"
+            android:exported="false" />
+ 
+      <activity
+            android:name=".FavoriteRecipesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".SongSearchActivity"

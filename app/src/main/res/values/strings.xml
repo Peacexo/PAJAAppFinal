@@ -4,6 +4,7 @@
     <string name="open_recipe">Open Recipe</string>
     <string name="open_dictionary">Open Dictionary</string>
     <string name="open_sunseeker">Open SunSeeker</string>
+
     <string name="title">Welcome to Song Search</string>
     <string name="search_text">Search for Artist</string>
     <string name="search_hint_text">Search here for the artist</string>
@@ -16,4 +17,9 @@
     <string name="song_title_text">Title</string>
     <string name="duration_text">Duration</string>
     <string name="remove_bttn_text">Delete</string>
+
+    <string name="welcome_to_nrecipe_search">Welcome to\nRecipe Search</string>
+    <string name="search_for_a_recipe">Search for a recipe</string>
+    <string name="button_to_search_for_a_recipe">Button to search for a recipe</string>
+
 </resources>

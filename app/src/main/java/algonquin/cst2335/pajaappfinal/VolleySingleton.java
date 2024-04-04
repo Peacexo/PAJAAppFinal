@@ -2,6 +2,7 @@ package algonquin.cst2335.pajaappfinal;
 
 import android.content.Context;
 
+
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
@@ -23,4 +24,6 @@ public class VolleySingleton {
     public RequestQueue getRequestQueue(){
         return requestQueue;
     }
+
 }
+

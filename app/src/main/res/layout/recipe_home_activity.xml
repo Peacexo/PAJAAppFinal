@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8EEEC">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/RecipeHomeTopBackground"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/recipe_home_top_background" />
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            />
+
+        <!-- TextView -->
+        <TextView
+            android:id="@+id/WelcomeToRecipeSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RecipeHomeTopBackground"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="Welcome to \nRecipe Search"
+            android:maxLines="2"
+            android:textColor="#EA6D35"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <!-- EditText -->
+        <EditText
+            android:id="@+id/editSearchRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/WelcomeToRecipeSearch"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:textSize="20sp"
+            android:hint="Search for a recipe"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textColorHint="#756C6C" />
+
+        <Button
+            android:id="@+id/searchRecipeButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/editSearchRecipe"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#41729F"
+            android:text="Search"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/buttonFavorites"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/searchRecipeButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#EA6D35"
+            android:text="List my Favorites"
+            android:textSize="18sp"/>
+
+        <!-- ImageButton -->
+<!--        <ImageButton-->
+<!--            android:id="@+id/searchRecipeButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@id/buttonFavorites"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginStart="28dp"-->
+<!--            android:layout_marginEnd="60dp"-->
+<!--            android:layout_toEndOf="@+id/buttonFavorites"-->
+<!--            android:background="#F8EEEC"-->
+<!--            android:contentDescription="@string/button_to_search_for_a_recipe"-->
+<!--            android:src="@drawable/recipe_search_icon" />-->
+
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_recipes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/buttonFavorites"
+            android:padding="16dp" />
+
+    </RelativeLayout>
+</ScrollView>
