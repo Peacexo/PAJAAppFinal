@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/text_location_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/overpass_semibold"
+        android:text="Location Name"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:gravity="center" /> <!-- Add gravity center here -->
+
+    <TextView
+        android:id="@+id/text_location_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/overpass_thin"
+        android:text="Sunrise and Sunset Details"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:gravity="center" /> <!-- Add gravity center here -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_todays_timings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lookup"
+            android:textSize="18sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/overpass_variablefont_wght"/>
+
+        <Button
+            android:id="@+id/button_favorite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:textSize="18sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/overpass_variablefont_wght"/>
+
+    </LinearLayout>
+
+</LinearLayout>
