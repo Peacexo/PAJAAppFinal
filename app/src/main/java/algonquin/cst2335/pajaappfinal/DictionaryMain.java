@@ -1,11 +1,19 @@
 package algonquin.cst2335.pajaappfinal;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,30 +38,74 @@ public class DictionaryMain extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DefinitionsAdapter adapter;
     private EditText searchEditText;
+    private SharedPreferences sharedPreferences;
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.help_menu_dic, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.help_dic) {
+            // Display an AlertDialog with instructions
+            showHelpDialog();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void showHelpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Help");
+        builder.setMessage("Instructions for using the interface:\n\n1. Enter a word to search in the provided field.\n2. Click on the search button to retrieve definitions.\n3. Tap on a definition to view detailed information.");
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dictionary_main);
+        Toolbar toolbar = findViewById(R.id.toolbar_help_dic);
 
-        // Inflate the item layout
-        //View itemLayout = getLayoutInflater().inflate(R.layout.item_search_result_dic, null);
+        // Set the Toolbar as the support action bar
+        setSupportActionBar(toolbar);
+        // Remove the title (app name) from the Toolbar
+        getSupportActionBar().setTitle("");
 
-        // Find RecyclerView from the inflated item layout
-        //RecyclerView recyclerViewSearchResults = itemLayout.findViewById(R.id.recyclerViewSearchResults);
+
         ImageView searchButton = findViewById(R.id.searchButton);
         EditText searchEditText = findViewById(R.id.searchEditText);
+        sharedPreferences = getSharedPreferences("SearchPrefs", Context.MODE_PRIVATE);
 
-        // Set up RecyclerView and its adapter
-        //adapter = new DefinitionsAdapter(new ArrayList<>());
-       // recyclerViewSearchResults.setAdapter(adapter);
-       // recyclerViewSearchResults.setLayoutManager(new LinearLayoutManager(this));
+        // Retrieve the last search term from SharedPreferences and display it in the EditText field
+        String lastSearchTerm = sharedPreferences.getString("lastSearchTerm", "");
+        searchEditText.setText(lastSearchTerm);
+
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String searchTerm = searchEditText.getText().toString().trim();
                 if (!searchTerm.isEmpty()) {
+                    // Save the search term to SharedPreferences
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("lastSearchTerm", searchTerm);
+                    editor.apply();
+
                     searchDefinition(searchTerm);
                 }
             }
@@ -97,13 +150,21 @@ public class DictionaryMain extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 // Handle Volley error
-                Toast.makeText(DictionaryMain.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                // Handle Volley error
+                error.printStackTrace();
+                // Show Snackbar for search error
+                showSnackbar("Error: " + error.getMessage());
+                // Toast.makeText(DictionaryMain.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
         // Add the request to the RequestQueue
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+    // Method to display a Snackbar
+    private void showSnackbar(String message) {
+        Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
     }
 
 }

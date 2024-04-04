@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.SavedTermViewHolder>{
-//    private List<SavedDefinitionDic> savedDefinitions;
+    //    private List<SavedDefinitionDic> savedDefinitions;
 //
 //    public SavedTermsAdapter(List<SavedDefinitionDic> savedDefinitions) {
 //        this.savedDefinitions = savedDefinitions;
@@ -78,8 +79,9 @@ public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.Sa
 //        }
 //
 //    }
-private List<SavedDefinitionDic> savedDefinitions;
+    private List<SavedDefinitionDic> savedDefinitions;
     private Context context;
+    private OnDeleteClickListener onDeleteClickListener;
 
     public SavedTermsAdapter(List<SavedDefinitionDic> savedDefinitions, Context context) {
         this.savedDefinitions = savedDefinitions;
@@ -94,6 +96,13 @@ private List<SavedDefinitionDic> savedDefinitions;
             }
             notifyDataSetChanged();
         }
+    }
+    public interface OnDeleteClickListener {
+        void onDeleteClick(SavedDefinitionDic savedDefinition); // Method to handle delete event
+    }
+
+    public void setOnDeleteClickListener(OnDeleteClickListener onDeleteClickListener) {
+        this.onDeleteClickListener = onDeleteClickListener;
     }
 
     @NonNull
@@ -117,24 +126,29 @@ private List<SavedDefinitionDic> savedDefinitions;
 
     public class SavedTermViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView searchTermTextView;
+        Button deleteButtonDic;
         //TextView definitionTextView;
 
         public SavedTermViewHolder(@NonNull View itemView) {
             super(itemView);
             searchTermTextView = itemView.findViewById(R.id.searchTermTextView);
+            deleteButtonDic = itemView.findViewById(R.id.deleteButtonDic);
             //definitionTextView = itemView.findViewById(R.id.definitionTextView);
             itemView.setOnClickListener(this);
+            deleteButtonDic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Call onDeleteClick method of the interface
+                    if (onDeleteClickListener != null) {
+                        onDeleteClickListener.onDeleteClick(savedDefinitions.get(getAdapterPosition()));
+                    }
+                }
+            });
         }
 
         public void bind(SavedDefinitionDic savedDefinition) {
             searchTermTextView.setText(savedDefinition.getSearchTerm());
             List<String> definitions = savedDefinition.getDefinitions();
-//            if (definitions != null && !definitions.isEmpty()) {
-//                String definitionString = TextUtils.join(", ", definitions);
-//                definitionTextView.setText(definitionString);
-//            } else {
-//                definitionTextView.setText("");
-//            }
         }
 
         @Override

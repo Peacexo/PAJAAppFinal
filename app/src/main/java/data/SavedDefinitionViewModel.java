@@ -92,12 +92,18 @@ private SavedDefinitionDAO savedDefinitionDAO;
         new Thread(() -> savedDefinitionDAO.insertDefinition(definition)).start();
     }
 
+//    public void delete(SavedDefinitionDic definition) {
+//        if (savedDefinitionDAO != null) {
+//            savedDefinitionDAO.deleteDefinition(definition);
+//        } else {
+//            Log.e("SavedDefinitionViewModel", "savedDefinitionDAO is null. Cannot delete definition.");
+//        }
+//    }
     public void delete(SavedDefinitionDic definition) {
-        if (savedDefinitionDAO != null) {
+        new Thread(() -> {
             savedDefinitionDAO.deleteDefinition(definition);
-        } else {
-            Log.e("SavedDefinitionViewModel", "savedDefinitionDAO is null. Cannot delete definition.");
-        }
+        }).start();
     }
+
 }
 
