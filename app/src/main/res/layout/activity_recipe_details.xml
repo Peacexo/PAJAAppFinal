@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8EEEC">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Recipe Image -->
+        <ImageView
+            android:id="@+id/imageViewRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/recipe_placeholder_image"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true" />
+
+        <!-- Recipe Title -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewRecipe"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#EA6D35"
+            />
+
+        <!-- Recipe Summary -->
+        <TextView
+            android:id="@+id/textViewSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewTitle"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+        <!-- Full Recipe URL -->
+        <TextView
+            android:id="@+id/textViewFullRecipeUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewSummary"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:autoLink="web"
+            android:linksClickable="true" />
+
+        <Button
+            android:id="@+id/buttonSaveToFavorites"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/textViewFullRecipeUrl"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#41729F"
+            android:text="Save to Favorites"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</ScrollView>

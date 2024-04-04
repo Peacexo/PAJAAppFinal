@@ -4,4 +4,7 @@
     <string name="open_recipe">Open Recipe</string>
     <string name="open_dictionary">Open Dictionary</string>
     <string name="open_sunseeker">Open SunSeeker</string>
+    <string name="welcome_to_nrecipe_search">Welcome to\nRecipe Search</string>
+    <string name="search_for_a_recipe">Search for a recipe</string>
+    <string name="button_to_search_for_a_recipe">Button to search for a recipe</string>
 </resources>
