@@ -24,6 +24,13 @@
             android:name=".SongSearchResultsAlbums"
             android:exported="false" />
  
+        <activity
+            android:name=".SavedTermsDicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DictionaryResults"
+             android:exported="false" />
+      
       <activity
             android:name=".FavoriteRecipesActivity"
             android:exported="false" />
