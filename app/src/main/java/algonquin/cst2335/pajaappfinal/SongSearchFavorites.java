@@ -20,7 +20,6 @@ public class SongSearchFavorites extends AppCompatActivity implements IRecyclerV
     private RecyclerView favorites;
     private ArrayList<Song>favoritSongsList = new ArrayList<>();
     private FavoriteAdapter favoriteAdapter;
-    private Button deleteBttn;
     private SongDAO songDAO;
 
     private SongSearchDatabase db;
@@ -44,6 +43,7 @@ public class SongSearchFavorites extends AppCompatActivity implements IRecyclerV
                 });
         favoriteAdapter = new FavoriteAdapter(SongSearchFavorites.this, favoritSongsList, SongSearchFavorites.this);
         favorites.setAdapter(favoriteAdapter);
+
     }
 
 
