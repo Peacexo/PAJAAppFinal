@@ -8,4 +8,18 @@
     <string name="welcome_to_nrecipe_search">Welcome to\nRecipe Search</string>
     <string name="search_for_a_recipe">Search for a recipe</string>
     <string name="button_to_search_for_a_recipe">Button to search for a recipe</string>
+
+
+    <!-- Peace's strings -->
+    <string name="welcome_dic">Bem-vindo ao Dicionário PAJA</string>
+    <string name="word_hint_dic">Pesquise uma palavra</string>
+    <string name="famous_quote_dic">As palavras, como a natureza, meio revelam e meio escondem a alma interior</string>
+    <string name="tool_search_result">Seu resultado de pesquisa</string>
+    <string name="save_term_dic">Salvar palavra</string>
+    <string name="view_term_dic">Ver palavras salvas</string>
+    <string name="tool_saved_dic">Palavras salvas</string>
+    <string name="delete_saved_dic">Excluir</string>
+    <string name="help_title_dic">Ajuda</string>
+    <string name="help_message_dic">Instruções para usar a interface:\n\n1. Digite uma palavra para pesquisar no campo fornecido.\n2. Clique no botão de pesquisa para recuperar as definições.\n3. Toque em uma definição para visualizar informações detalhadas.</string>
+    <string name="ok_button_text_dic">OK</string>
 </resources>

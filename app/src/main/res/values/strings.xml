@@ -67,4 +67,17 @@
     <string name="search_for_a_recipe">Search for a recipe</string>
     <string name="button_to_search_for_a_recipe">Button to search for a recipe</string>
 
+    <!-- Peace's strings -->
+    <string name="welcome_dic">Welcome to the PAJA Dictionary</string>
+    <string name="word_hint_dic">Search up a word</string>
+    <string name="famous_quote_dic">Words, like nature, half reveal and half conceal the soul within</string>
+    <string name="tool_search_result">Your Search Result</string>
+    <string name="save_term_dic">Save Word</string>
+    <string name="view_term_dic">View Saved Words</string>
+    <string name="tool_saved_dic">Saved Words</string>
+    <string name="delete_saved_dic">Delete</string>
+    <string name="help_title_dic">Help</string>
+    <string name="help_message_dic">Instructions for using the interface:\n\n1. Enter a word to search in the provided field.\n2. Click on the search button to retrieve definitions and you can also save the word.\n3. Click on view saved words button to see saved words, tap on saved words for more info and for deletion.</string>
+    <string name="ok_button_text_dic">OK</string>
+
 </resources>

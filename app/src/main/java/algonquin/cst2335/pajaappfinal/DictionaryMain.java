@@ -61,8 +61,8 @@ public class DictionaryMain extends AppCompatActivity {
 
     private void showHelpDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Help");
-        builder.setMessage("Instructions for using the interface:\n\n1. Enter a word to search in the provided field.\n2. Click on the search button to retrieve definitions.\n3. Tap on a definition to view detailed information.");
+        builder.setTitle(R.string.help_title_dic);
+        builder.setMessage(R.string.help_message_dic);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
