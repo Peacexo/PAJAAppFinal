@@ -62,6 +62,7 @@ public class SavedTermsDicActivity extends AppCompatActivity implements SavedTer
             public void onChanged(List<SavedDefinitionDic> savedDefinitions) {
                 // Update the adapter with the new list of saved definitions
                 adapter.updateSavedDefinitions(savedDefinitions);
+
             }
 
         });
