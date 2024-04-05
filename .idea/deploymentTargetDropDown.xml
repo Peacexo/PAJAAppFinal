@@ -18,7 +18,16 @@
           <timeTargetWasSelectedWithDropDown value="2024-03-30T02:32:32.972292300Z" />
         </State>
       </entry>
+      <entry key="RecipeDetailsActivityTest2">
+        <State />
+      </entry>
+      <entry key="RecipeDetailsActivityTest3">
+        <State />
+      </entry>
       <entry key="RecipeHomeActivity">
+        <State />
+      </entry>
+      <entry key="RecipeHomeActivityTest">
         <State />
       </entry>
       <entry key="app">
@@ -34,7 +43,7 @@
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-04-03T02:42:48.932703900Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-04-04T20:10:05.841818400Z" />
         </State>
       </entry>
     </value>
