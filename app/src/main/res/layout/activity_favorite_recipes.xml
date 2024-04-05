@@ -20,7 +20,7 @@
         android:id="@+id/buttonDeleteAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete All"
+        android:text="@string/recipe_delete_all_button"
         android:backgroundTint="#41729F"
         android:textSize="20sp"
         android:textStyle="bold"
