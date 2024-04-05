@@ -5,6 +5,8 @@
     <string name="open_recipe">Open Recipe</string>
     <string name="open_dictionary">Open Dictionary</string>
     <string name="open_sunseeker">Open SunSeeker</string>
+  
+<!--Strings for Alessandra Project-->
     <string name="recipe_delete_all_button">Deletar todas</string>
     <string name="recipe_save_to_favorites">Salvar nos Favoritos</string>
     <string name="recipe_welcome_to">Bem-vindo ao Receitas</string>
@@ -30,4 +32,59 @@
     <string name="recipe_keyword_for_search">Por favor insira uma palavra-chave para pesquisa</string>
     <string name="recipes_not_found">Nenhuma receita encontrada para \'</string>
     <string name="recipe_saved_to_sharedpreferences">Texto salvo em SharedPreferences</string>
+<!--End of Strings for Alessandra Project-->
+  
+  <!--Strings for Allan Project-->
+    <string name="title">Song Search</string>
+    <string name="search_text">Buscar Artista</string>
+    <string name="search_hint_text">Busque aqui seu artista</string>
+    <string name="results">Resultados</string>
+    <string name="duration">Duração</string>
+    <string name="song_title">Título</string>
+    <string name="track_position">Faixa</string>
+    <string name="favorite_text">Favoritos</string>
+    <string name="track_position_text">Faixa</string>
+    <string name="song_title_text">Título</string>
+    <string name="duration_text">Duração</string>
+    <string name="remove_bttn_text">Delete</string>
+    <string name="welcome_to_nrecipe_search">Welcome to\nRecipe Search</string>
+    <string name="search_for_a_recipe">Search for a recipe</string>
+    <string name="button_to_search_for_a_recipe">Button to search for a recipe</string>
+    <string name="about_text">Sobre</string>
+    <string name="song_erro_search_text">Insira um artista para pesquisar</string>
+    <string name="song_erro_json">JSON Erro</string>
+    <string name="song_welcome_text">Song Search</string>
+    <string name="song_message_add_favorite">Gostaria de salvar essa música a sua lista de favoritos?</string>
+    <string name="song_title_question_add_favorite">Adicionar aos favoritos</string>
+    <string name="no_tex">Não</string>
+    <string name="yes_text">Sim</string>
+    <string name="song_confirmation_add">Música adicionada aos favoritos</string>
+    <string name="song_erro_add_favorite">Erro ao adicionar faixa aos favoritos</string>
+    <string name="song_title_delete">Deseja Deletar</string>
+    <string name="song_question_delete_favorite">Você realmente deseja deletar esta música?</string>
+    <string name="song_erro_delete_song_favorite">Erro ao remover música dos favoritos</string>
+    <string name="song_delete_message">"Faixa deletada: "</string>
+    <string name="song_cancel">Cancelar</string>
+    <string name="search_text_button">BUSCAR</string>
+    <string name="album_information_text">Informações do Álbum</string>
+    <string name="song_help">Ajuda</string>
+    <string name="song_about_message">Desenvolvido por Allan Torres. Versão 1.0</string>
+    <string name="song_instruction">"Busca:\n"
+"1. Digite o nome de um artista e clique em buscar.\n"
+"2. Selecione um artista para exibir seus álbuns.\n"
+"3. Selecione um álbum para mais detalhes.\n"
+"4. Clique em uma música para adicionar à lista de favoritos.\n\n"
+"Acessar lista de favoritos:\n"
+"1. Clique no ícone no canto superior direito.\n"
+"2. Uma lista das suas músicas favoritas será exibida.\n"
+"3. Clique em uma música da lista para mais detalhes.\n\n"
+"Remover dos Favoritos:\n"
+"1. Acesse a lista de favoritos.\n"
+"2. Clique em excluir para remover uma música dos favoritos."
+      <!--End of Strings for Allan Project-->
+
+</string>
+    <string name="song_instruction_title">Instruções</string>
+
+
 </resources>
