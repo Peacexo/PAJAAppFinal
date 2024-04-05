@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PAJAAppFinal</string>
-    <string name="open_deezer">Open Deezer</string>
-    <string name="open_recipe">Open Recipe</string>
-    <string name="open_dictionary">Open Dictionary</string>
-    <string name="open_sunseeker">Open SunSeeker</string>
+    <string name="open_deezer">Abrir Deezer</string>
+    <string name="open_recipe">Abrir Receita</string>
+    <string name="open_dictionary">Abrir Dicionári</string>
+    <string name="open_sunseeker">Abrir SunSeeker</string>
   
 <!--Strings for Alessandra Project-->
     <string name="recipe_delete_all_button">Deletar todas</string>
