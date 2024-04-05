@@ -1,3 +1,8 @@
+/**
+ * Author: Peace Iyunade
+ * Lab section: CST2355 022
+ * Creation Date: 31st March 2024
+ */
 package algonquin.cst2335.pajaappfinal;
 
 import androidx.annotation.NonNull;
@@ -34,12 +39,24 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class represents the main activity for a dictionary application. It allows users to search for word definitions
+ * using an external API, display search results, and view help instructions.
+ * @author Peace Iyunade
+ * @version March 31, 2024 (Final Version)
+ */
+
 public class DictionaryMain extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DefinitionsAdapter adapter;
     private EditText searchEditText;
     private SharedPreferences sharedPreferences;
 
+    /**
+     * This method initializes the options menu in the activity.
+     * @param menu The menu to be initialized.
+     * @return boolean indicating whether the menu creation was successful.
+     */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,6 +64,11 @@ public class DictionaryMain extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.help_menu_dic, menu);
         return true;
     }
+    /**
+     * This method handles menu item selection events.
+     * @param item The selected menu item.
+     * @return boolean indicating whether the selection event was handled.
+     */
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -58,6 +80,9 @@ public class DictionaryMain extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
     }
+    /**
+     * Displays a dialog with help instructions.
+     */
 
     private void showHelpDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -74,6 +99,11 @@ public class DictionaryMain extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    /**
+     * Initializes the activity layout and sets up necessary components.
+     * @param savedInstanceState The saved instance state bundle.
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +142,10 @@ public class DictionaryMain extends AppCompatActivity {
         });
 
     }
+    /**
+     * Performs a search for the definition of the specified term using an external API.
+     * @param searchTerm The term to search for.
+     */
     private void searchDefinition(String searchTerm) {
         String url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchTerm;
 
@@ -162,7 +196,10 @@ public class DictionaryMain extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-    // Method to display a Snackbar
+    /**
+     * Displays a Snackbar with the specified message.
+     * @param message The message to display in the Snackbar.
+     */
     private void showSnackbar(String message) {
         Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
     }

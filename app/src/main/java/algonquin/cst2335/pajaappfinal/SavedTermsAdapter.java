@@ -1,3 +1,8 @@
+/**
+ * Author: Peace Iyunade
+ * Lab section: CST2335 022
+ * Creation Date: 31st March 2024
+ */
 package algonquin.cst2335.pajaappfinal;
 
 import android.app.AlertDialog;
@@ -14,80 +19,32 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+/**
+ * This class represents an adapter for populating a RecyclerView with saved terms and their definitions.
+ * It provides methods to update the list of saved definitions and handle delete button clicks.
+ * Implements the OnDeleteClickListener interface to handle delete events.
+ * @author Peace Iyunade
+ * @version March 31, 2024 (Final Version)
+ */
 
 public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.SavedTermViewHolder>{
-    //    private List<SavedDefinitionDic> savedDefinitions;
-//
-//    public SavedTermsAdapter(List<SavedDefinitionDic> savedDefinitions) {
-//        this.savedDefinitions = savedDefinitions;
-//    }
-//
-//        public void updateSavedDefinitions(List<SavedDefinitionDic> newSavedDefinitions) {
-//            if (savedDefinitions != null) { // Check if savedDefinitions is not null
-//                savedDefinitions.clear();
-//                if (newSavedDefinitions != null) { // Check if newSavedDefinitions is not null
-//                    savedDefinitions.addAll(newSavedDefinitions);
-//                }
-//                notifyDataSetChanged();
-//            }
-//    }
-//    @NonNull
-//    @Override
-//    public SavedTermViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        View itemView = LayoutInflater.from(parent.getContext())
-//                .inflate(R.layout.item_saved_term_dic, parent, false);
-//        return new SavedTermViewHolder(itemView);
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull SavedTermViewHolder holder, int position) {
-//        SavedDefinitionDic savedDefinition = savedDefinitions.get(position);
-//        holder.bind(savedDefinition);
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return savedDefinitions.size();
-//    }
-//
-//    public static class SavedTermViewHolder extends RecyclerView.ViewHolder {
-//        TextView searchTermTextView;
-//        TextView definitionTextView;
-//
-//        public SavedTermViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//            searchTermTextView = itemView.findViewById(R.id.searchTermTextView);
-//            definitionTextView = itemView.findViewById(R.id.definitionTextView);
-//        }
-//
-////        public void bind(SavedDefinitionDic savedDefinition) {
-////            searchTermTextView.setText(savedDefinition.getSearchTerm());
-////            definitionTextView.setText((CharSequence) savedDefinition.getDefinitions());
-////        }
-//        public void bind(SavedDefinitionDic savedDefinition) {
-//            searchTermTextView.setText(savedDefinition.getSearchTerm());
-//            // Assuming getDefinition() returns an ArrayList<String>
-//            // Convert it to a single string separated by commas, for example
-//            List<String> definitions = savedDefinition.getDefinitions();
-//            if (definitions != null && !definitions.isEmpty()) {
-//                String definitionString = TextUtils.join(", ", definitions);
-//                definitionTextView.setText(definitionString);
-//            } else {
-//                // Handle the case when definitions list is empty or null
-//                definitionTextView.setText("");
-//            }
-//        }
-//
-//    }
+
     private List<SavedDefinitionDic> savedDefinitions;
     private Context context;
     private OnDeleteClickListener onDeleteClickListener;
-
+    /**
+     * Constructs a SavedTermsAdapter with the specified list of saved definitions and context.
+     * @param savedDefinitions The list of saved definitions to be displayed.
+     * @param context The context in which the adapter will operate.
+     */
     public SavedTermsAdapter(List<SavedDefinitionDic> savedDefinitions, Context context) {
         this.savedDefinitions = savedDefinitions;
         this.context = context;
     }
-
+    /**
+     * Updates the list of saved definitions with new data.
+     * @param newSavedDefinitions The new list of saved definitions.
+     */
     public void updateSavedDefinitions(List<SavedDefinitionDic> newSavedDefinitions) {
         if (savedDefinitions != null) {
             savedDefinitions.clear();
@@ -97,10 +54,16 @@ public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.Sa
             notifyDataSetChanged();
         }
     }
+    /**
+     * Interface definition for a callback to be invoked when a delete button is clicked.
+     */
     public interface OnDeleteClickListener {
         void onDeleteClick(SavedDefinitionDic savedDefinition); // Method to handle delete event
     }
-
+    /**
+     * Sets the listener to be invoked when a delete button is clicked.
+     * @param onDeleteClickListener The listener to be invoked.
+     */
     public void setOnDeleteClickListener(OnDeleteClickListener onDeleteClickListener) {
         this.onDeleteClickListener = onDeleteClickListener;
     }
@@ -123,11 +86,17 @@ public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.Sa
     public int getItemCount() {
         return savedDefinitions.size();
     }
+    /**
+     * This class represents a ViewHolder for individual saved term items.
+     */
 
     public class SavedTermViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView searchTermTextView;
         Button deleteButtonDic;
-        //TextView definitionTextView;
+        /**
+         * Constructs a SavedTermViewHolder for the given itemView.
+         * @param itemView The view representing an individual item within the RecyclerView.
+         */
 
         public SavedTermViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -145,7 +114,10 @@ public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.Sa
                 }
             });
         }
-
+        /**
+         * Binds the provided saved definition to the ViewHolder item.
+         * @param savedDefinition The saved definition to bind.
+         */
         public void bind(SavedDefinitionDic savedDefinition) {
             searchTermTextView.setText(savedDefinition.getSearchTerm());
             List<String> definitions = savedDefinition.getDefinitions();
@@ -156,7 +128,10 @@ public class SavedTermsAdapter extends RecyclerView.Adapter<SavedTermsAdapter.Sa
             SavedDefinitionDic savedDefinition = savedDefinitions.get(getAdapterPosition());
             showDefinitionDialog(savedDefinition);
         }
-
+        /**
+         * Displays a dialog with the definitions of the saved term.
+         * @param savedDefinition The SavedDefinitionDic object containing the term and its definitions.
+         */
         private void showDefinitionDialog(SavedDefinitionDic savedDefinition) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle(savedDefinition.getSearchTerm());

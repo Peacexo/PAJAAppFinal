@@ -1,3 +1,8 @@
+/**
+ * Author: Peace Iyunade
+ * Lab section: CST2335 022
+ * Creation Date: 31st March 2024
+ */
 package algonquin.cst2335.pajaappfinal;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
@@ -21,11 +26,22 @@ import java.util.List;
 
 import data.SavedDefinitionViewModel;
 
+/**
+ * This class represents the activity for displaying saved terms and their definitions in a RecyclerView.
+ * It allows users to view and delete saved terms from the database.
+ * Implements the OnDeleteClickListener interface to handle delete button clicks.
+ * @author Peace Iyunade
+ * @version March 31, 2024 (Final Version)
+ */
+
 public class SavedTermsDicActivity extends AppCompatActivity implements SavedTermsAdapter.OnDeleteClickListener {
     private RecyclerView recyclerView;
     private SavedTermsAdapter adapter;
     private SavedDefinitionViewModel savedDefinitionViewModel;
-
+    /**
+     * Initializes the activity layout and sets up necessary components.
+     * @param savedInstanceState The saved instance state bundle.
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +68,10 @@ public class SavedTermsDicActivity extends AppCompatActivity implements SavedTer
         // Set the delete button click listener
         adapter.setOnDeleteClickListener(this);
     }
+    /**
+     * Handles the delete button click event.
+     * @param savedDefinition The SavedDefinitionDic object to be deleted.
+     */
     @Override
     public void onDeleteClick(SavedDefinitionDic savedDefinition) {
         // Handle delete button click here
