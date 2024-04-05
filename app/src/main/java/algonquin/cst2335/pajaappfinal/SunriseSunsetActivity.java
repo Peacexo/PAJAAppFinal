@@ -9,6 +9,7 @@ import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,20 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * The SunriseSunsetActivity class is responsible for displaying the main screen of the application,
+ * where users can input latitude and longitude values to fetch sunrise and sunset times.
+ * It also allows users to view their favorite locations and their corresponding sunrise and sunset times.
+ * <p>
+ * The class includes methods for saving latitude and longitude values to SharedPreferences,
+ * fetching sunrise and sunset times from an API, and updating the RecyclerView with favorite locations.
+ * <p>
+ * Additionally, it contains an inner class FavoritesAdapter which is a RecyclerView Adapter used to
+ * populate the list of favorite locations in the RecyclerView.
+ */
+/**
+ * @author JingYi Li
+ */
 public class SunriseSunsetActivity extends AppCompatActivity {
 
     private EditText latitudeEditText;
@@ -37,13 +51,23 @@ public class SunriseSunsetActivity extends AppCompatActivity {
     private FavoritesAdapter favoritesAdapter;
     private List<String> favoriteLocations = new ArrayList<>(); // Assuming you're just storing location names for now
     private AppDatabase db;
+    private SharedPreferences sharedPreferences;
     Button viewFavoritesButton;
 
-
+    /**
+     * Called when the activity is first created. Responsible for initializing the activity's views,
+     * setting up the RecyclerView with its adapter, and setting click listeners for the lookup button
+     * and view favorites button.
+     *
+     * @param savedInstanceState a Bundle containing the activity's previously saved state, if available.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sunrise_sunset); // This should match your XML file name.
+
+        // Initialize SharedPreferences
+        sharedPreferences = getSharedPreferences("LocationData", MODE_PRIVATE);
 
         // Make sure IDs match your layout
         latitudeEditText = findViewById(R.id.latitudeInput);
@@ -51,8 +75,15 @@ public class SunriseSunsetActivity extends AppCompatActivity {
         lookupButton = findViewById(R.id.lookupButton);
         favoritesRecyclerView = findViewById(R.id.favoritesRecyclerView); // Ensure this
 
-        // Initialize your views and RecyclerView
+        // Set latitude and longitude values from SharedPreferences to their respective TextViews
+        TextView latSaveTextView = findViewById(R.id.lat_save);
+        TextView lonSaveTextView = findViewById(R.id.lon_save);
+        String savedLatitude = sharedPreferences.getString("latitude", "");
+        String savedLongitude = sharedPreferences.getString("longitude", "");
+        latSaveTextView.setText(savedLatitude);
+        lonSaveTextView.setText(savedLongitude);
 
+        // Initialize your views and RecyclerView
         db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "favorites_database")
                 .allowMainThreadQueries() // For simplicity, allowing main thread queries. Consider background threads for production.
                 // Add your migration object here.
@@ -80,6 +111,10 @@ public class SunriseSunsetActivity extends AppCompatActivity {
                 try {
                     double latitude = Double.parseDouble(latitudeEditText.getText().toString());
                     double longitude = Double.parseDouble(longitudeEditText.getText().toString());
+
+                    // Save latitude and longitude to SharedPreferences
+                    saveLocationData(String.valueOf(latitude), String.valueOf(longitude));
+
                     fetchSunriseSunsetTimes(latitude, longitude);
                     latitudeEditText.setText("");
                     longitudeEditText.setText("");
@@ -96,6 +131,35 @@ public class SunriseSunsetActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Saves the provided latitude and longitude values to SharedPreferences for future use.
+     * Also updates the corresponding TextViews in the layout to display the new latitude and longitude.
+     *
+     * @param latitude  the latitude value to be saved
+     * @param longitude the longitude value to be saved
+     */
+    // Method to save latitude and longitude to SharedPreferences
+    private void saveLocationData(String latitude, String longitude) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Latitude", latitude);
+        editor.putString("Longitude", longitude);
+        editor.apply();
+
+        // Update lat_save and lon_save TextViews with the latitude and longitude values
+        TextView latSaveTextView = findViewById(R.id.lat_save);
+        TextView lonSaveTextView = findViewById(R.id.lon_save);
+        latSaveTextView.setText(latitude);
+        lonSaveTextView.setText(longitude);
+    }
+
+    /**
+     * Fetches sunrise and sunset times from an API based on the provided latitude and longitude values.
+     * Displays the retrieved times in a new activity (SunriseSunsetDetailsActivity) if successful.
+     * Shows a toast message if an error occurs during data fetching.
+     *
+     * @param latitude  the latitude value for which to fetch sunrise and sunset times
+     * @param longitude the longitude value for which to fetch sunrise and sunset times
+     */
     private void fetchSunriseSunsetTimes(double latitude, double longitude) {
         String url = "https://api.sunrise-sunset.org/json?lat=" + latitude + "&lng=" + longitude + "&formatted=0";
 
@@ -121,6 +185,16 @@ public class SunriseSunsetActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * The FavoritesAdapter class is an inner class of SunriseSunsetActivity responsible for populating
+     * the RecyclerView with favorite locations.
+     * <p>
+     * It extends RecyclerView.Adapter and implements methods to create, bind, and update ViewHolder objects
+     * for each item in the RecyclerView.
+     * <p>
+     * This adapter class also includes a ViewHolder inner class to hold references to the views
+     * corresponding to each item in the RecyclerView.
+     */
 
     private class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> {
         private List<FavoriteLocation> favoriteLocations; // Adjusted to use FavoriteLocation
@@ -141,16 +215,6 @@ public class SunriseSunsetActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             FavoriteLocation location = favoriteLocations.get(position);
-
-
-            // New
-//            SunriseSunsetDetailsActivity activity = new SunriseSunsetDetailsActivity();
-            // 从纬度和经度信息获取城市名称
-//            String cityName = activity.fetchLocationName(location.getLatitude(), location.getLongitude());
-
-            // 设置地点名称为获取的城市名称
-//            holder.locationName.setText(cityName);
-//            holder.locationDetails.setText("Sunrise: " + location.getSunriseTime() + ", Sunset: " + location.getSunsetTime());
 
             holder.locationName.setText("Location " + (position + 1));
             holder.locationName.setText(location.getLocationName());
@@ -209,6 +273,10 @@ public class SunriseSunsetActivity extends AppCompatActivity {
             }
         }
 
+
+
     }
 
+
 }
+

@@ -20,48 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Latitude EditText -->
-    <!--    <EditText-->
-    <!--        android:id="@+id/latitudeInput"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:backgroundTint="@color/sunriseEditTextBG"-->
-    <!--        android:elevation="2dp"-->
-    <!--        android:hint="Latitude"-->
-    <!--        android:inputType="numberDecimal|numberSigned"-->
-    <!--        android:padding="12dp"-->
-    <!--        android:textColor="#CC1F1F"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.5"-->
-    <!--        app:layout_constraintWidth_percent="0.9"/>-->
-
-    <!-- Longitude EditText -->
-    <!--    <EditText-->
-    <!--        android:id="@+id/longitudeInput"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:backgroundTint="@color/sunriseEditTextBG"-->
-    <!--        android:elevation="2dp"-->
-    <!--        android:hint="Longitude"-->
-    <!--        android:inputType="numberDecimal|numberSigned"-->
-    <!--        android:padding="12dp"-->
-    <!--        android:textColor="#C62929"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/latitudeInput"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.5"-->
-    <!--        app:layout_constraintWidth_percent="0.9"/>-->
-
-
-    <!-- Lookup Button -->
-
-    <!-- View Favorites Button -->
-
-    <!-- RecyclerView -->
-
-
     <Button
         android:id="@+id/view_favorites_button"
         android:layout_width="266dp"
@@ -89,7 +47,7 @@
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="1024dp"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,19 +67,6 @@
         android:textColorLink="#FEA62C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <!--    <Button-->
-    <!--        android:id="@+id/lookupButton"-->
-    <!--        android:layout_width="147dp"-->
-    <!--        android:layout_height="41dp"-->
-    <!--        android:layout_marginEnd="15dp"-->
-    <!--        android:layout_marginBottom="15dp"-->
-    <!--        android:text="Lookup"-->
-    <!--        android:textColor="@color/white"-->
-    <!--        app:backgroundTint="#FEA62C"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintWidth_percent="0.5" />-->
 
     <EditText
         android:id="@+id/latitudeInput"
@@ -152,9 +97,35 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="70dp"
-        android:text="Enter Latitude and Longitude"
+        android:text="Enter Lat and Lon : "
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/lon_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="584dp"
+        android:text="Pre lat"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lat_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="584dp"
+        android:text="Pre lon"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -51,6 +51,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment:2.6.0")
     implementation("androidx.navigation:navigation-ui:2.6.0")
     implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.preference:preference-ktx:1.1.1")
 
     //Added by Peace
     val room_version = "2.6.1"
@@ -61,8 +62,6 @@ dependencies {
     
     //    Dependecies added by Alessandra:
     implementation ("com.squareup.picasso:picasso:2.71828")
-
-
 
 
 }
