@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:title="Your Search Result"
+        app:title="@string/tool_search_result"
         app:titleTextColor="@android:color/white"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +48,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Save Term"
+        android:text="@string/save_term_dic"
         app:layout_constraintEnd_toStartOf="@+id/viewSavedTermsButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         android:id="@+id/viewSavedTermsButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="View Saved Terms"
+        android:text="@string/view_term_dic"
         app:layout_constraintTop_toBottomOf="@id/guideline"
         app:layout_constraintStart_toEndOf="@+id/saveTermButton"
         app:layout_constraintEnd_toEndOf="parent"

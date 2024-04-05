@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:title="Saved Terms"
+        android:title="@string/tool_saved_dic"
         android:titleTextColor="@android:color/white"
-        app:title="Saved Terms"
+        app:title="@string/tool_saved_dic"
         app:titleTextColor="@android:color/white"
         app:layout_constraintTop_toTopOf="parent" />
 

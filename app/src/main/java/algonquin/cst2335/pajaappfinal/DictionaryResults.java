@@ -1,3 +1,8 @@
+/**
+ * Author: Peace Iyunade
+ * Lab section: CST2335 022
+ * Creation Date: 31st March 2024
+ */
 package algonquin.cst2335.pajaappfinal;
 
 import androidx.annotation.Nullable;
@@ -15,6 +20,13 @@ import data.SavedDefinitionViewModel;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents the activity displaying search results in a RecyclerView for a dictionary application.
+ * It allows users to view search results, save a term with its definitions to a database, and navigate to view saved terms.
+ * @author Peace Iyunade
+ * @version March 31, 2024 (Final Version)
+ */
+
 
 public class DictionaryResults extends AppCompatActivity {
 
@@ -23,15 +35,16 @@ public class DictionaryResults extends AppCompatActivity {
     private Button saveTermButton;
     private SavedDefinitionViewModel savedDefinitionViewModel;
 
-
+    /**
+     * Initializes the activity layout and sets up necessary components.
+     * @param savedInstanceState The saved instance state bundle.
+     */
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dictionary_results);
-        // Initialize ViewModel
-        //savedDefinitionViewModel = new ViewModelProvider(this).get(SavedDefinitionViewModel.class);
-        // Initialize ViewModel with Application instance
+
         savedDefinitionViewModel = new ViewModelProvider.AndroidViewModelFactory(getApplication()).create(SavedDefinitionViewModel.class);
 
         // Find the TextView for the search term
@@ -74,6 +87,11 @@ public class DictionaryResults extends AppCompatActivity {
             startActivity(intent);
         });
     }
+    /**
+     * Saves the searched term and its definitions to the database.
+     * @param searchTerm The searched term.
+     * @param definitions The definitions associated with the term.
+     */
         private void saveTermToDatabase(String searchTerm, ArrayList<String> definitions) {
         // Create a new SavedDefinition object with the searchTerm and definitions
         SavedDefinitionDic savedDefinition = new SavedDefinitionDic(searchTerm, definitions);
