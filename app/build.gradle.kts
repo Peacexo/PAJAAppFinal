@@ -39,11 +39,11 @@ android {
 
 dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation ("com.android.volley:volley:1.2.1")
     implementation ("com.github.bumptech.glide:glide:4.16.0") //Implemented by Allan
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.recyclerview:recyclerview:1.+")
+
     implementation("androidx.navigation:navigation-fragment:2.7.7")
     implementation("androidx.navigation:navigation-ui:2.7.7")
 
@@ -51,6 +51,8 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+   
+    implementation("androidx.core:core-ktx:1.12.0")
 
 
     //Added by Peace
@@ -63,7 +65,5 @@ dependencies {
     //    Dependecies added by Alessandra:
     implementation ("com.squareup.picasso:picasso:2.71828")
     
-  
- 
 
 }
