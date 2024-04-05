@@ -5,12 +5,39 @@
     <string name="open_recipe">Open Recipe</string>
     <string name="open_dictionary">Open Dictionary</string>
     <string name="open_sunseeker">Open SunSeeker</string>
+  
+<!--Strings for Alessandra Project-->
+    <string name="recipe_delete_all_button">Deletar todas</string>
+    <string name="recipe_save_to_favorites">Salvar nos Favoritos</string>
+    <string name="recipe_welcome_to">Bem-vindo ao Receitas</string>
+    <string name="recipe_search_for_a_">Pesquise uma receita</string>
+    <string name="recipe_search">Pesquisar</string>
+    <string name="recipe_list_my_favorites">Favoritas</string>
+    <string name="recipe_id">Receita ID</string>
+    <string name="recipe_title">Recita Titulo</string>
+    <string name="recipe_delete_all_question">Deletar todas as receitas</string>
+    <string name="recipe_delete_sure_question">Tem certeza de que deseja excluir todas as receitas dos favoritos?</string>
+    <string name="recipe_delete_confirmation">Todas as receitas favoritas foram excluídas</string>
+    <string name="recipe_undo">Desfazer</string>
+    <string name="recipe_no_decision">Não</string>
+    <string name="recipe_yes_decision">Sim</string>
+    <string name="recipe_invalid">Recieta Invalida</string>
+    <string name="recipe_error_parsing_details">Erro ao converter detalhes da receita</string>
+    <string name="recipe_error_fetching_details">Erro ao buscar detalhes da receita:</string>
+    <string name="recipe_saved_to_favorites">Receita salva em favoritos</string>
+    <string name="recipe_already_saved">A receita já está salva nos favoritos</string>
+    <string name="recipe_about_app">Sobre o App</string>
+    <string name="recipe_instructions">Pesquise facilmente receitas deliciosas usando palavras-chave. Navegue por uma variedade de receitas, veja detalhes e salve suas favoritas para acesso rápido usando o botão Meus favoritos</string>
+    <string name="recipe_got_it">Entendi</string>
+    <string name="recipe_keyword_for_search">Por favor insira uma palavra-chave para pesquisa</string>
+    <string name="recipes_not_found">Nenhuma receita encontrada para \'</string>
+    <string name="recipe_saved_to_sharedpreferences">Texto salvo em SharedPreferences</string>
+<!--End of Strings for Alessandra Project-->
+  
+  <!--Strings for Allan Project-->
     <string name="title">Song Search</string>
-
     <string name="search_text">Buscar Artista</string>
-
     <string name="search_hint_text">Busque aqui seu artista</string>
-
     <string name="results">Resultados</string>
     <string name="duration">Duração</string>
     <string name="song_title">Título</string>
@@ -26,17 +53,12 @@
     <string name="about_text">Sobre</string>
     <string name="song_erro_search_text">Insira um artista para pesquisar</string>
     <string name="song_erro_json">JSON Erro</string>
-
     <string name="song_welcome_text">Song Search</string>
-
     <string name="song_message_add_favorite">Gostaria de salvar essa música a sua lista de favoritos?</string>
-
     <string name="song_title_question_add_favorite">Adicionar aos favoritos</string>
     <string name="no_tex">Não</string>
-
     <string name="yes_text">Sim</string>
     <string name="song_confirmation_add">Música adicionada aos favoritos</string>
-
     <string name="song_erro_add_favorite">Erro ao adicionar faixa aos favoritos</string>
     <string name="song_title_delete">Deseja Deletar</string>
     <string name="song_question_delete_favorite">Você realmente deseja deletar esta música?</string>
@@ -59,6 +81,7 @@
 "Remover dos Favoritos:\n"
 "1. Acesse a lista de favoritos.\n"
 "2. Clique em excluir para remover uma música dos favoritos."
+      <!--End of Strings for Allan Project-->
 
 </string>
     <string name="song_instruction_title">Instruções</string>

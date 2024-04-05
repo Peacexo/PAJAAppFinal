@@ -4,6 +4,34 @@
     <string name="open_recipe">Open Recipe</string>
     <string name="open_dictionary">Open Dictionary</string>
     <string name="open_sunseeker">Open SunSeeker</string>
+  
+<!--Strings for Alessandra Project-->
+    <string name="recipe_delete_all_button">Delete All</string>
+    <string name="recipe_save_to_favorites">Save to Favorites</string>
+    <string name="recipe_welcome_to">Welcome to \nRecipe Search</string>
+    <string name="recipe_search_for_a_">Search for a recipe</string>
+    <string name="recipe_search">Search</string>
+    <string name="recipe_list_my_favorites">List my Favorites</string>
+    <string name="recipe_id">Recipe ID:</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="recipe_delete_all_question">Delete All Recipes</string>
+    <string name="recipe_delete_sure_question">Are you sure you want to delete all recipes from favorites?</string>
+    <string name="recipe_delete_confirmation">All favorite recipes were deleted</string>
+    <string name="recipe_undo">Undo</string>
+    <string name="recipe_no_decision">No</string>
+    <string name="recipe_yes_decision">Yes</string>
+    <string name="recipe_invalid">Invalid recipe</string>
+    <string name="recipe_error_parsing_details">Error parsing recipe details</string>
+    <string name="recipe_error_fetching_details">"Error fetching recipe details: "</string>
+    <string name="recipe_saved_to_favorites">Recipe saved to favorites</string>
+    <string name="recipe_already_saved">Recipe is already saved to favorites</string>
+    <string name="recipe_about_app">About the App</string>
+    <string name="recipe_instructions">Easily search for delicious recipes using keywords. Browse through a variety of recipes, view details, and save your favorites ones for quick access using My favorites button</string>
+    <string name="recipe_got_it">Got it</string>
+    <string name="recipe_keyword_for_search">Please enter a keyword for search</string>
+    <string name="recipes_not_found">No recipes found for \'</string>
+    <string name="recipe_saved_to_sharedpreferences">Text saved to SharedPreferences</string>
+<!--End of Strings for Alessandra Project-->
 
 
     <string name="title">Song Search</string>
@@ -52,9 +80,8 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
 
-
+<!--Strings for Allan Project-->
     <string name="title">Welcome to Song Search</string>
-
     <string name="search_text">Search for Artist</string>
     <string name="search_hint_text">Search here for the artist</string>
     <string name="results">Results</string>
@@ -66,7 +93,6 @@
     <string name="song_title_text">Title</string>
     <string name="duration_text">Duration</string>
     <string name="remove_bttn_text">Delete</string>
-
     <string name="welcome_to_nrecipe_search">Welcome to\nRecipe Search</string>
     <string name="search_for_a_recipe">Search for a recipe</string>
     <string name="button_to_search_for_a_recipe">Button to search for a recipe</string>
@@ -101,6 +127,8 @@
 "Delete from Favorites:\n"
 "1. Access favorite list.\n"
 "2. Click delete to remove a song from favorites."
+      <!--End of Strings for Allan Project-->
+      
 </string>
     <string name="song_instruction_title">Instructions</string>
 
