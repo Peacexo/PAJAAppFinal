@@ -1,5 +1,6 @@
 package algonquin.cst2335.pajaappfinal;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
@@ -13,16 +14,38 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+/**
+ * Adapter class for managing favorite songs in a RecyclerView.
+ * This class handles the display and interaction of favorite songs.
+ *
+ * <p>
+ * -------------------------------------------------------
+ * Course: CST 2335 - Mobile Graphical Interface Programming
+ * Final Project: Deezer Song Search API
+ * Student Name: Allan Torres
+ * Student Number: 041022473
+ * -------------------------------------------------------
+ * </p>
+ */
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.SongHolder> {
     private Context context;
     private List<Song> songList;
     private final IRecyclerView recyclerViewinterface;
     private SongDAO songDao;
 
+    /**
+     * Constructs a new FavoriteAdapter instance.
+     *
+     * @param context           The context of the calling activity or fragment.
+     * @param songList          The list of favorite songs to be displayed.
+     * @param iRecyclerView     The interface for handling RecyclerView item clicks.
+     */
     public FavoriteAdapter(Context context, List<Song> songList, IRecyclerView iRecyclerView) {
         this.context = context;
         this.songList = songList;
@@ -50,8 +73,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.SongHo
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Confirm Delete")
-                        .setMessage("Are you sure you want to delete this song?")
+                builder.setTitle(context.getString(R.string.song_title_delete))
+                        .setMessage(context.getString(R.string.song_question_delete_favorite))
                         .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -63,19 +86,19 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.SongHo
                                     songList.remove(adapterPosition);
                                     Executor executor = Executors.newSingleThreadExecutor();
                                     executor.execute(() -> {
-                                                try {
-                                                    songDao.deleteSong(deletedSong);
-                                                } catch (Exception e) {
-                                                    e.printStackTrace();
-                                                    Toast.makeText(context, "Error removing song to favorites", Toast.LENGTH_SHORT).show();
-                                                }
-                                            });
+                                        try {
+                                            songDao.deleteSong(deletedSong);
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                            Toast.makeText(context, context.getString(R.string.song_erro_delete_song_favorite), Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                                     notifyItemRemoved(adapterPosition);
-                                    Toast.makeText(context, "Song deleted: " + deletedSong.getTitle(), Toast.LENGTH_SHORT).show();
+                                    showSnackbar(context.getString(R.string.song_delete_message) + deletedSong.getTitle());
                                 }
                             }
                         })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(context.getString(R.string.song_cancel), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 // Cancel delete operation
@@ -92,10 +115,20 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.SongHo
         return songList.size();
     }
 
+    /**
+     * Converts seconds to minutes and returns the formatted string.
+     *
+     * @param seconds The duration in seconds.
+     * @return The formatted duration string in "mm:ss" format.
+     */
     public static String convertSecondsToMinutes(int seconds) {
         int minutes = seconds / 60;
         int remainingSeconds = seconds % 60;
         return String.format("%02d:%02d", minutes, remainingSeconds);
+    }
+
+    private void showSnackbar(String message) {
+        Snackbar.make(((Activity) context).findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
     }
 
     public class SongHolder extends RecyclerView.ViewHolder {
@@ -114,10 +147,10 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.SongHo
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (recyclerViewinterface != null) {
+                    if (recyclerViewInterface != null) {
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
-                            recyclerViewinterface.onItemClick(position);
+                            recyclerViewInterface.onItemClick(position);
                         }
                     }
                 }
