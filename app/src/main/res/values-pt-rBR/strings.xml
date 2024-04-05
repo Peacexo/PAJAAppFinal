@@ -35,7 +35,7 @@
 <!--End of Strings for Alessandra Project-->
   
   <!--Strings for Allan Project-->
-    <string name="title">Song Search</string>
+    <string name="song_title_text_2">Song Search</string>
     <string name="search_text">Buscar Artista</string>
     <string name="search_hint_text">Busque aqui seu artista</string>
     <string name="results">Resultados</string>
