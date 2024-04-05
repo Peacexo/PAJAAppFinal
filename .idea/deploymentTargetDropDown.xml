@@ -2,32 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="MainActivity">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\aless\.android\avd\Pixel_2_API_27.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-30T02:32:32.972292300Z" />
-        </State>
-      </entry>
-      <entry key="RecipeDetailsActivityTest2">
+      <entry key="DeleteAllFavoriteRecipesTest">
         <State />
       </entry>
-      <entry key="RecipeDetailsActivityTest3">
+      <entry key="DeleteAllFavoriteUndoFunctionTest">
         <State />
       </entry>
-      <entry key="RecipeHomeActivity">
+      <entry key="FavoriteRecipesActivityTest">
         <State />
       </entry>
-      <entry key="RecipeHomeActivityTest">
+      <entry key="MenuItemTest">
+        <State />
+      </entry>
+      <entry key="Tests in 'algonquin.cst2335.pajaappfinal'">
         <State />
       </entry>
       <entry key="app">
@@ -43,7 +30,7 @@
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-04-04T20:10:05.841818400Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-04-05T03:04:28.805379500Z" />
         </State>
       </entry>
     </value>
