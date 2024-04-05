@@ -52,6 +52,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui:2.6.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.preference:preference-ktx:1.1.1")
+    androidTestImplementation("androidx.test:rules:1.4.0")
 
     //Added by Peace
     val room_version = "2.6.1"
