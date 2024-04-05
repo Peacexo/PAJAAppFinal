@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".SongSearchAlbumFocus">
-
+    tools:context=".SongSearchFavoriteSongFocus">
     <TextView
         android:id="@+id/album_title"
         android:layout_width="match_parent"
@@ -22,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/album_cover"
+        android:id="@+id/album_cover_favorite"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="8dp"
@@ -38,16 +36,16 @@
         android:layout_marginTop="8dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:text="@string/album_information_text"
+        android:text="Album Information"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/album_cover" />
+        app:layout_constraintTop_toBottomOf="@+id/album_cover_favorite" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/album_information"
+        android:id="@+id/favorite_song_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -55,4 +53,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/album_details" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

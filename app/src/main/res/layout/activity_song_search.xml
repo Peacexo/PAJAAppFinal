@@ -50,7 +50,7 @@
         android:id="@+id/search_button"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="SEARCH"
+        android:text="@string/search_text_button"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
