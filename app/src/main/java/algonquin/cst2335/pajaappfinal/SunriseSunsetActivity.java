@@ -177,6 +177,7 @@ public class SunriseSunsetActivity extends AppCompatActivity {
         });
 
         AlertDialog dialog = builder.create();
+
         dialog.show();
     }
 
