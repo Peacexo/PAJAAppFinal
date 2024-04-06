@@ -13,10 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     public void openSunriseApp(View view) {
         startActivity(new Intent(this,SunriseSunsetActivity.class));
-
     }
+
     public void openDictionaryApp(View view) {
         startActivity(new Intent(this, DictionaryMain.class));
     }
@@ -28,7 +29,4 @@ public class MainActivity extends AppCompatActivity {
     public void openDeezerApp(View view) {
         startActivity(new Intent(this, SongSearchActivity.class));
     }
-
-
-
 }

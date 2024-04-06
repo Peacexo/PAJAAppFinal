@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/sunrise_menu_about"
-        android:icon="@drawable/about"
+        android:icon="@drawable/sunrise_question_mark"
         android:title="sun_about"
         app:showAsAction="always" />
 </menu>

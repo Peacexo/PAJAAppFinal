@@ -109,6 +109,10 @@
     <string name="previous">Anterior</string>
     <string name="lorem_ipsum">[...]</string>
     <string name="song_title_text_3">"        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris"</string>
+    <string name="sunSeeker">SunSeeker</string>
+    <string name="view_favorites_button">Mostrar lista de favoritos</string>
+    <string name="switchText">Digite Lat e Lon:</string>
+    <string name="lookupButton">OLHO PARA CIMA</string>
 
 
 </resources>

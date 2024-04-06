@@ -141,6 +141,8 @@ public class SunriseSunsetActivity extends AppCompatActivity {
         favoritesAdapter = new FavoritesAdapter(new ArrayList<>(), this);
         favoritesRecyclerView.setAdapter(favoritesAdapter);
 
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
+
     }
 
     @Override
@@ -167,7 +169,8 @@ public class SunriseSunsetActivity extends AppCompatActivity {
     private void showHelpDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("ABOUT");
-        builder.setMessage("Hi!");
+        builder.setMessage("\n" +
+                "Welcome to SunSeeker! With our app, you can easily find sunrise and sunset times by entering latitude and longitude coordinates and clicking the \"LOOKUP\" button. You can also save your favorite locations for quick access later.");
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
