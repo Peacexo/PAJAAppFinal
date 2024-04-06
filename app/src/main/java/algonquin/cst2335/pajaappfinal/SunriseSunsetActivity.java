@@ -2,13 +2,16 @@ package algonquin.cst2335.pajaappfinal;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -46,6 +49,7 @@ import java.util.List;
  * @author JingYi Li
  */
 public class SunriseSunsetActivity extends AppCompatActivity {
+
     private EditText latitudeEditText;
     private EditText longitudeEditText;
     private Button lookupButton;
@@ -65,8 +69,14 @@ public class SunriseSunsetActivity extends AppCompatActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sunrise_sunset); // This should match your XML file name.
+        Toolbar toolbar = findViewById(R.id.sunrise_bar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+
 
         // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences("LocationData", MODE_PRIVATE);
@@ -135,18 +145,18 @@ public class SunriseSunsetActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.sunrise_menu, menu);
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.sunrise_menu, menu);
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.sunrise_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         // Check if the item selected matches the menu item
-        if (item.getItemId() == R.id.menu_about) {
-            // Handle the click event here
-            Intent intent = new Intent(this, SunriseAbout.class);
-            startActivity(intent);
+        if (item.getItemId() == R.id.sunrise_menu_about) {
+            showHelpDialog();
             return true; // Return true to indicate that the menu item click event has been handled
         } else {
             // If the selected item does not match the menu item, let the superclass handle it
@@ -154,6 +164,22 @@ public class SunriseSunsetActivity extends AppCompatActivity {
         }
     }
 
+    private void showHelpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("ABOUT");
+        builder.setMessage("Hi!");
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+
+        dialog.show();
+    }
 
     /**
      * Saves the provided latitude and longitude values to SharedPreferences for future use.

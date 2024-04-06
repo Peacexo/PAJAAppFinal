@@ -102,7 +102,13 @@
 
 </string>
     <string name="song_instruction_title">Instruções</string>
-
+    <string name="title_activity_sunrise_time_page">SunriseTimePágina</string>
+    <string name="first_fragment_label">Primeiro Fragmento</string>
+    <string name="second_fragment_label">Segundo Fragmento</string>
+    <string name="next">Próxima</string>
+    <string name="previous">Anterior</string>
+    <string name="lorem_ipsum">[...]</string>
+    <string name="song_title_text_3">"        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris"</string>
 
 
 </resources>
