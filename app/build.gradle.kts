@@ -53,6 +53,8 @@ dependencies {
 
    
     implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.preference:preference-ktx:1.1.1")
+    androidTestImplementation("androidx.test:rules:1.4.0")
 
 
     //Added by Peace
@@ -64,6 +66,6 @@ dependencies {
     
     //    Dependecies added by Alessandra:
     implementation ("com.squareup.picasso:picasso:2.71828")
-    
+
 
 }
