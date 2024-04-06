@@ -10,7 +10,12 @@ import androidx.room.Update;
 import java.util.List;
 
 import algonquin.cst2335.pajaappfinal.FavoriteLocation;
-
+/**
+ * The FavoriteLocationDao interface defines methods for accessing and manipulating favorite location data in the database.
+ * These methods include insert, delete, update, and query operations.
+ *
+ * @author JingYi Li
+ */
 @Dao
 public interface FavoriteLocationDao {
     @Insert

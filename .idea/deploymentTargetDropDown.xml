@@ -2,19 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="BackButton">
-        <State />
-      </entry>
-      <entry key="DeleteItemTest">
-        <State />
-      </entry>
-      <entry key="DeleteOneTest">
-        <State />
-      </entry>
-      <entry key="DeleteTest">
-        <State />
-      </entry>
       <entry key="MainActivity">
+        <State />
+      </entry>
+      <entry key="Sunrise1_ShowFavoriteTest">
+        <State />
+      </entry>
+      <entry key="Sunrise3_BackButton">
+        <State />
+      </entry>
+      <entry key="Sunrise4_DeleteTest">
+        <State />
+      </entry>
+      <entry key="Sunrise5_ItemLookUpTest">
         <State />
       </entry>
       <entry key="app">

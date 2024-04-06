@@ -1,6 +1,7 @@
 package algonquin.cst2335.pajaappfinal;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -24,7 +28,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +46,6 @@ import java.util.List;
  * @author JingYi Li
  */
 public class SunriseSunsetActivity extends AppCompatActivity {
-
     private EditText latitudeEditText;
     private EditText longitudeEditText;
     private Button lookupButton;
@@ -130,6 +132,28 @@ public class SunriseSunsetActivity extends AppCompatActivity {
         favoritesRecyclerView.setAdapter(favoritesAdapter);
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.sunrise_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        // Check if the item selected matches the menu item
+        if (item.getItemId() == R.id.menu_about) {
+            // Handle the click event here
+            Intent intent = new Intent(this, SunriseAbout.class);
+            startActivity(intent);
+            return true; // Return true to indicate that the menu item click event has been handled
+        } else {
+            // If the selected item does not match the menu item, let the superclass handle it
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     /**
      * Saves the provided latitude and longitude values to SharedPreferences for future use.

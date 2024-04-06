@@ -3,7 +3,12 @@ package algonquin.cst2335.pajaappfinal;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
+/**
+ * The FavoriteLocation class represents a single favorite location entry in the database.
+ * Each entry contains information such as location name, sunrise time, sunset time, latitude, longitude, and favorite status.
+ *
+ * @author JingYi Li
+ */
 @Entity(tableName = "favorite_locations")
 public class FavoriteLocation {
     @PrimaryKey(autoGenerate = true)
