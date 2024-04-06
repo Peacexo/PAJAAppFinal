@@ -34,7 +34,7 @@
             android:layout_below="@id/RecipeHomeTopBackground"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:text="Welcome to \nRecipe Search"
+            android:text="@string/recipe_welcome_to"
             android:maxLines="2"
             android:textColor="#EA6D35"
             android:textSize="40sp"
@@ -51,7 +51,7 @@
             android:layout_marginTop="40dp"
             android:ems="10"
             android:textSize="20sp"
-            android:hint="Search for a recipe"
+            android:hint="@string/recipe_search_for_a_"
             android:inputType="text"
             android:padding="8dp"
             android:textColorHint="#756C6C" />
@@ -64,7 +64,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:backgroundTint="#41729F"
-            android:text="Search"
+            android:text="@string/recipe_search"
             android:textSize="20sp"/>
 
         <Button
@@ -75,23 +75,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:backgroundTint="#EA6D35"
-            android:text="List my Favorites"
+            android:text="@string/recipe_list_my_favorites"
             android:textSize="18sp"/>
-
-        <!-- ImageButton -->
-<!--        <ImageButton-->
-<!--            android:id="@+id/searchRecipeButton"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignTop="@id/buttonFavorites"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_marginStart="28dp"-->
-<!--            android:layout_marginEnd="60dp"-->
-<!--            android:layout_toEndOf="@+id/buttonFavorites"-->
-<!--            android:background="#F8EEEC"-->
-<!--            android:contentDescription="@string/button_to_search_for_a_recipe"-->
-<!--            android:src="@drawable/recipe_search_icon" />-->
-
 
         <!-- RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView

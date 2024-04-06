@@ -22,7 +22,7 @@
         android:textColor="#EA6D35"
         android:textSize="25sp"
         android:layout_marginTop="8dp"
-        tools:text="Recipe Title" />
+        tools:text="@string/recipe_title" />
 
     <TextView
         android:id="@+id/recipeId"
@@ -30,6 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textSize="18sp"
-        tools:text="Recipe ID: 123456" />
+        tools:text="@string/recipe_id" />
 
 </LinearLayout>

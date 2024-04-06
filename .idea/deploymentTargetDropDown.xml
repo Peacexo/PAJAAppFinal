@@ -2,10 +2,81 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+
       <entry key="MainActivity">
         <State />
       </entry>
       <entry key="Sunrise1_ShowFavoriteTest">
+
+      <entry key="DictionaryMain">
+        <State />
+      </entry>
+      <entry key="DictionaryMainTest">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\morio\.android\avd\Pixel_3a_API_34.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-04-05T04:49:02.558082800Z" />
+        </State>
+      </entry>
+      <entry key="MainActivity">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\morio\.android\avd\Pixel_3a_API_34.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-04-05T06:04:52.637725900Z" />
+        </State>
+      </entry>
+      <entry key="Tests in 'algonquin.cst2335.pajaappfinal'">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\morio\.android\avd\Pixel_3a_API_34.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-04-05T04:52:12.167801100Z" />
+        </State>
+      </entry>
+      <entry key="app">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\morio\.android\avd\Pixel_3a_API_34.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-04-04T19:17:39.504009600Z" />
+        </State>
+      </entry>
+      <entry key="testHelpMenuFunctionality()">
+
         <State />
       </entry>
       <entry key="Sunrise3_BackButton">

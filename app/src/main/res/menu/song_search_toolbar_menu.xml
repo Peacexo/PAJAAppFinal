@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item1"
+        android:id="@+id/song_favorite_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Favorites" />
+        android:icon="@drawable/song_favorite"
+        android:title="@string/favorite_text"
+        android:tooltipText="@string/favorite_text"
+        app:showAsAction="always" />
     <item
-        android:id="@+id/item2"
+        android:id="@+id/song_about_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="About" />
+        android:title="@string/about_text"
+        />
+    <item
+        android:id="@+id/song_help_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/song_help" />
 </menu>
