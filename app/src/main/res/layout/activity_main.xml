@@ -4,56 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/SunSeeker"
+    <ImageButton
+        android:id="@+id/main_deezer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:onClick="openSunriseApp"
-        android:text="@string/open_sunseeker"
+        android:layout_marginBottom="120dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/main_sun"
+        app:srcCompat="@drawable/main_deezer" />
+
+    <ImageButton
+        android:id="@+id/main_recipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/main_deezer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/main_dictionary"
+        app:srcCompat="@drawable/main_recipe" />
+
+    <ImageButton
+        android:id="@+id/main_sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_deezer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/main_sunseeker" />
+
+    <ImageButton
+        android:id="@+id/main_dictionary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/main_sun"
+        app:layout_constraintEnd_toStartOf="@+id/main_recipe"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/mian_dictionary" />
+
+    <TextView
+        android:id="@+id/probepal"
+        android:layout_width="249dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/overpass_semibold"
+        android:text="ProbePal"
+        android:textSize="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Dictionary"
+    <TextView
+        android:id="@+id/main_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:onClick="openDictionaryApp"
-        android:text="@string/open_dictionary"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/overpass_extralight"
+        android:text="Welcome !"
+        android:textColor="#606060"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Recipe"
+    <TextView
+        android:id="@+id/main_content"
+        android:layout_width="380dp"
+        android:layout_height="137dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/overpass_extralight"
+        android:padding="20dp"
+        android:text="ProbePal is your go-to companion for all your search needs. With its intuitive interface and powerful search capabilities, it makes exploring information effortless and enjoyable."
+        android:textColor="#606060"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/probepal" />
+
+    <TextView
+        android:id="@+id/main_footer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="272dp"
-        android:onClick="openRecipeApp"
-        android:text="@string/open_recipe"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/overpass_extralight"
+        android:text="Made by Alessandra, Peace,  Allan, Java."
+        android:textColor="#606060"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/Deezer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
-        android:onClick="openDeezerApp"
-        android:text="@string/open_deezer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
