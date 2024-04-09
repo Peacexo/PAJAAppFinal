@@ -32,7 +32,7 @@ public class TestSongDelete {
 
         //Must have at least one song in the favorite list
 
-        ViewInteraction materialButton = onView(withId(R.id.Deezer));
+        ViewInteraction materialButton = onView(withId(R.id.main_deezer));
         materialButton.perform(click());
 
         ViewInteraction actionMenuItemView = onView(withId(R.id.song_favorite_item));

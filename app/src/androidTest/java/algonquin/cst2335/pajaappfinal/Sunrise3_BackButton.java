@@ -21,7 +21,7 @@ public class Sunrise3_BackButton {
             // Perform actions on the activity if needed
         });
 
-        ViewInteraction materialButton = Espresso.onView(ViewMatchers.withId(R.id.SunSeeker));
+        ViewInteraction materialButton = Espresso.onView(ViewMatchers.withId(R.id.main_sun));
         materialButton.perform(ViewActions.click());
 
         ViewInteraction appCompatEditText = Espresso.onView(ViewMatchers.withId(R.id.latitudeInput));

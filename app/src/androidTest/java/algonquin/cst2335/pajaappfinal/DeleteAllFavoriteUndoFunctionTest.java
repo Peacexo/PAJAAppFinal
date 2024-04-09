@@ -35,7 +35,7 @@ public class DeleteAllFavoriteUndoFunctionTest {
     public void deleteAllFavoriteUndoFunctionTest() {
 
         // Click on the "Recipe" button in the MainActivity
-        ViewInteraction materialButton = onView(withId(R.id.Recipe));
+        ViewInteraction materialButton = onView(withId(R.id.main_recipe));
         materialButton.perform(click());
 
         // Click on the "Favorites" button in the RecipeHomeActivity

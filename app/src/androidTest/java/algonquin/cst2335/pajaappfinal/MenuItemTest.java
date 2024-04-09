@@ -37,7 +37,7 @@ public class MenuItemTest {
     @Test
     public void menuItemTest() {
         // Click on the "Recipe" button in the MainActivity
-        ViewInteraction materialButton = onView(withId(R.id.Recipe));
+        ViewInteraction materialButton = onView(withId(R.id.main_recipe));
         materialButton.perform(click());
 
         // Click on the "About" menu item in the RecipeHomeActivity

@@ -28,7 +28,7 @@ public class Sunrise2_LookUpButtonTest {
 
     @Test
     public void lookUpButtonTest() {
-        ViewInteraction materialButton = onView(withId(R.id.SunSeeker));
+        ViewInteraction materialButton = onView(withId(R.id.main_sun));
         materialButton.perform(click());
 
         ViewInteraction appCompatEditText = onView(withId(R.id.latitudeInput));

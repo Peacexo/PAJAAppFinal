@@ -32,7 +32,7 @@ public class Test_Search_Button {
     public void test_Search_Button() {
 
 
-        ViewInteraction materialButton = onView(withId(R.id.Deezer));
+        ViewInteraction materialButton = onView(withId(R.id.main_deezer));
         materialButton.perform(click());
 
 

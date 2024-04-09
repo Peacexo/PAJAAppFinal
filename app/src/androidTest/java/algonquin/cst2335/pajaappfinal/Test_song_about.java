@@ -38,7 +38,7 @@ public class Test_song_about {
     @Test
     public void test_song_about() {
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.Deezer), withText("Open Deezer"),
+                allOf(withId(R.id.main_deezer), withText("Open Deezer"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),

@@ -40,7 +40,7 @@ public class Sunrise5_ItemLookUpTest {
 
     @Test
     public void sunrise5_ItemLookUpTest() {
-        ViewInteraction materialButton = onView(withId(R.id.SunSeeker));
+        ViewInteraction materialButton = onView(withId(R.id.main_sun));
         materialButton.perform(click());
 
 //        ViewInteraction materialButton2 = onView(withId(R.id.view_favorites_button));

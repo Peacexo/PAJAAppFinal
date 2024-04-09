@@ -39,7 +39,7 @@ public class Sunrise4_DeleteTest {
 
     @Test
     public void deleteTest() {
-        ViewInteraction materialButton = onView(withId(R.id.SunSeeker));
+        ViewInteraction materialButton = onView(withId(R.id.main_sun));
         materialButton.perform(click());
 
         ViewInteraction materialButton2 = onView(withId(R.id.view_favorites_button));

@@ -28,7 +28,7 @@ public class Sunrise1_ShowFavoriteTest {
 
     @Test
     public void showFavoriteTest() {
-        ViewInteraction materialButton = onView(withId(R.id.SunSeeker));
+        ViewInteraction materialButton = onView(withId(R.id.main_sun));
         materialButton.perform(click());
 
         // click
